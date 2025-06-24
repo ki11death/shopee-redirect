@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>即將前往蝦皮好康頁</title>
+  <style>
+    body {
+      background-color: #fff8f0;
+      font-family: "Noto Sans TC", sans-serif;
+      text-align: center;
+      padding: 50px 20px;
+      color: #333;
+    }
+    h1 {
+      font-size: 24px;
+      color: #ff5722;
+      margin-bottom: 16px;
+    }
+    p {
+      font-size: 16px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: #ff5722;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    small {
+      display: block;
+      margin-top: 30px;
+      font-size: 12px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>跳轉提示中…</h1>
+  <p>3 秒後自動開啟蝦皮連結<br>如未跳轉，請手動點擊下方按鈕</p>
+  <a class="button" href="https://tw.shp.ee/2ya5fhl?smtt=0.0.9" target="_blank" rel="noopener noreferrer">👉 前往蝦皮</a>
+  <small>建議用 LINE 或手機瀏覽器開啟，避免跳出提示</small>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = "https://tw.shp.ee/2ya5fhl?smtt=0.0.9";
+    }, 3000);
+  </script>
+</body>
+</html>
