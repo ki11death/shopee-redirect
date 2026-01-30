@@ -3,51 +3,290 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>即將前往蝦皮好康頁</title>
+  <title>AI 動作影片自動化方案</title>
   <style>
+    :root {
+      color-scheme: light;
+      --primary: #ff5722;
+      --accent: #ff8a50;
+      --bg: #fff8f0;
+      --card: #ffffff;
+      --text: #2b2b2b;
+      --muted: #6b6b6b;
+      --border: #f0d8cc;
+    }
+    * {
+      box-sizing: border-box;
+    }
     body {
-      background-color: #fff8f0;
-      font-family: "Noto Sans TC", sans-serif;
+      margin: 0;
+      background-color: var(--bg);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      color: var(--text);
+    }
+    header {
+      padding: 48px 20px 24px;
       text-align: center;
-      padding: 50px 20px;
-      color: #333;
     }
-    h1 {
-      font-size: 24px;
-      color: #ff5722;
-      margin-bottom: 16px;
+    header h1 {
+      font-size: 28px;
+      margin-bottom: 12px;
+      color: var(--primary);
     }
-    p {
+    header p {
+      margin: 0 auto;
+      max-width: 720px;
+      line-height: 1.6;
+      color: var(--muted);
       font-size: 16px;
     }
-    a.button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 24px;
-      background-color: #ff5722;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 18px;
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+      display: grid;
+      gap: 20px;
     }
-    small {
-      display: block;
-      margin-top: 30px;
+    section {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(255, 87, 34, 0.1);
+      border: 1px solid var(--border);
+    }
+    section h2 {
+      margin-top: 0;
+      color: var(--primary);
+      font-size: 20px;
+    }
+    .pill {
+      display: inline-block;
       font-size: 12px;
-      color: #888;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #ffe5d8;
+      color: #c2410c;
+      margin-bottom: 12px;
+    }
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+    .timeline-item {
+      padding: 16px;
+      border-radius: 10px;
+      background: #fff4ee;
+      border: 1px dashed #ffb397;
+    }
+    .timeline-item h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      color: #b9421c;
+    }
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .card {
+      padding: 16px;
+      border-radius: 10px;
+      border: 1px solid #ffe1d4;
+      background: #fffdfb;
+    }
+    .card h3 {
+      margin-top: 0;
+      font-size: 16px;
+      color: #c74b21;
+    }
+    .card ul {
+      padding-left: 18px;
+      margin: 0;
+      color: var(--muted);
+    }
+    .note {
+      background: #fff1e8;
+      border-left: 4px solid var(--accent);
+      padding: 16px;
+      border-radius: 8px;
+      color: #8a3c1f;
+      line-height: 1.6;
+    }
+    .cta {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      text-align: center;
+    }
+    .cta button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .cta button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(255, 87, 34, 0.25);
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding-bottom: 40px;
+    }
+    .status {
+      margin-top: 10px;
+      font-weight: 600;
+      color: #b9421c;
+    }
+    .status span {
+      color: #2b2b2b;
+      font-weight: 500;
     }
   </style>
 </head>
 <body>
-  <h1>跳轉提示中…</h1>
-  <p>3 秒後自動開啟蝦皮連結<br>如未跳轉，請手動點擊下方按鈕</p>
-  <a class="button" href="https://tw.shp.ee/2ya5fhl?smtt=0.0.9" target="_blank" rel="noopener noreferrer">👉 前往蝦皮</a>
-  <small>建議用 LINE 或手機瀏覽器開啟，避免跳出提示</small>
+  <header>
+    <h1>AI 重複動作影片自動化方案</h1>
+    <p>
+      我無法直接播放或解析提供的 YouTube 連結內容，但以下整理了「重複動作影片」常見分析框架，
+      並提供一個可自動生成 AI 影片的應用設計藍圖，方便你快速落地實作。
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <div class="pill">影片分析建議</div>
+      <h2>可用的影片動作拆解方式</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>1. 分段辨識重複循環</h3>
+          <p>找出動作的開始點與結束點，標記每一個循環的關鍵影格（例如起始姿勢、觸發動作、回復）。</p>
+        </div>
+        <div class="timeline-item">
+          <h3>2. 抓關鍵動作節點</h3>
+          <p>建立 3-5 個「關鍵動作節點」：例如手部抬起、身體前傾、完成收回，方便後續綁定生成流程。</p>
+        </div>
+        <div class="timeline-item">
+          <h3>3. 節奏與鏡頭參考</h3>
+          <p>記錄節奏（每輪動作秒數）與鏡頭參數（距離、角度、光線），才能保持生成影片穩定一致。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="pill">應用程式設計</div>
+      <h2>自動生成 AI 影片的模組拆解</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>輸入資料</h3>
+          <ul>
+            <li>參考影片或動作 GIF</li>
+            <li>動作循環次數 / 秒數</li>
+            <li>場景風格與角色描述</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>動作擷取</h3>
+          <ul>
+            <li>Pose Estimation (OpenPose / MediaPipe)</li>
+            <li>擷取骨架序列並做降噪平滑</li>
+            <li>轉換成可重複播放的動作曲線</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>AI 生成</h3>
+          <ul>
+            <li>將骨架序列餵給影片生成模型</li>
+            <li>使用提示詞固定風格與場景</li>
+            <li>輸出多段影片供選擇</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>自動化輸出</h3>
+          <ul>
+            <li>批次渲染 + 排程生成</li>
+            <li>自動補上音效 / 文字</li>
+            <li>輸出為 MP4 / Shorts</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="pill">流程範例</div>
+      <h2>一鍵自動化製作流程</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>步驟 A：上傳參考影片</h3>
+          <p>使用者上傳重複動作影片，系統自動偵測一段循環片段並建立動作資料庫。</p>
+        </div>
+        <div class="timeline-item">
+          <h3>步驟 B：選擇生成模板</h3>
+          <p>挑選角色、背景、光線與風格預設，生成提示詞與控制參數。</p>
+        </div>
+        <div class="timeline-item">
+          <h3>步驟 C：批次生成與輸出</h3>
+          <p>設定重複次數與輸出規格，一鍵產生多支影片並自動歸檔。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="pill">原型 Demo</div>
+      <h2>自動生成流程模擬</h2>
+      <div class="cta">
+        <button type="button" id="simulate">開始模擬自動生成</button>
+        <div class="status">狀態：<span id="statusText">等待開始</span></div>
+      </div>
+      <p class="note">
+        這個 Demo 只示意流程狀態切換，實作時可串接後端生成服務（如 ComfyUI、Runway、
+        Stable Video Diffusion、AnimateDiff）來完成真正的影片輸出。
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    提醒：若要做精準分析，請提供動作截圖或描述動作細節，以便精準建立動作節奏與腳本。
+  </footer>
 
   <script>
-    setTimeout(() => {
-      window.location.href = "https://tw.shp.ee/2ya5fhl?smtt=0.0.9";
-    }, 3000);
+    const steps = [
+      "匯入影片與自動分段中",
+      "擷取骨架與動作節奏",
+      "建立生成提示詞",
+      "批次輸出影片",
+      "完成，自動歸檔"
+    ];
+
+    const statusText = document.getElementById("statusText");
+    const simulateButton = document.getElementById("simulate");
+    let timer;
+
+    simulateButton.addEventListener("click", () => {
+      clearInterval(timer);
+      let index = 0;
+      statusText.textContent = steps[index];
+      timer = setInterval(() => {
+        index += 1;
+        if (index >= steps.length) {
+          clearInterval(timer);
+          statusText.textContent = "流程已完成，可下載輸出結果";
+          return;
+        }
+        statusText.textContent = steps[index];
+      }, 1200);
+    });
   </script>
 </body>
 </html>
